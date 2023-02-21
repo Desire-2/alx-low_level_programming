@@ -1,13 +1,16 @@
 #include "main.h"
-/** a program that prints _putchar, followed by a new line
+
+/**
+ * main - Entry point
+ * followed by a new line
  * by Desire
- * return:0
- */
+ * return:Always 0
+*/
 
 
-int main(void)
+int _putchar(char c);
 {
-	_putchar('_')
+	_putchar('_');
 		_putchar('d');
 		_putchar('e');
 		_putchar('s');
@@ -17,3 +20,4 @@ int main(void)
 		_putchar('\n');
 		return (0);
 }
+
