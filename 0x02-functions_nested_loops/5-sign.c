@@ -5,8 +5,6 @@
  * Description: a prgram that print the sign of a number
  * @n: parameter that accept character
  *
- * Written by Desire
- *
  * Return: 1 and prints + if n is greater than zero
  * and 0 an prints 0 if n zero and -1 and prints - if n
  * less that zero
