@@ -1,20 +1,21 @@
-i#include "main.h"
-
+#include "main.h"
+#include <ctype.h>
 /**
- * main - check the code.
+ * _islower - function definition
+ * @ch: parameter that accept character
  *
- * Return: Always 0.
+ * Description: A program that check for lowercase character
+ *
+ * Return: 1 if c is lowercase and 0 otherwise
  */
-int main(void)
+int _islower(int ch)
 {
-    int r;
-
-    r = _islower('H');
-    _putchar(r + '0');
-    r = _islower('o');
-    _putchar(r + '0');
-    r = _islower(108);
-    _putchar(r + '0');
-    _putchar('\n');
-    return (0);
+	if (islower(ch))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
 }
