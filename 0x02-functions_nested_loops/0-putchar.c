@@ -4,7 +4,7 @@
  * main - Entry point
  * followed by a new line
  * by Desire
- * return:Always 0
+ * return:Always 0 (Success)
 */
 
 
