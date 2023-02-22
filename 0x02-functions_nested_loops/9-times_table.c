@@ -1,29 +1,42 @@
-#include <stdio.h>
 #include "main.h"
 
-#define SIZE 10
 /**
- * times_table -  Prints the 9 times table,
- *  starting with 0
- *
- *  Return: Always 0
+ * times_table - prints the 9 times table
+ * Description: prints the 9 times table
+ * Return: void
  */
+
 void times_table(void)
 {
-int i,j;
+	int row, column, product, tens, ones;
 
-int mat[SIZE][SIZE];
+	for (row = 0; row <= 9; row++)
+	{
+		for (column = 0; column <= 9; column++)
+		{
+			product = row * column;
+			tens = product / 10;
+			ones = product % 10;
 
-mat[i][j] = (i * j);
-
-if (i = 0; i < SIZE; i++);
- (j = 0; j < SIZE; j++);
-
-            
-{
-printf("%4d", mat[i][j]);
-
-printf("\n")
-}
-return (o)
+			if (column == 0)
+			{
+				_putchar('0');
+			}
+			else if (product < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(ones + '0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
+		}
+		_putchar('\n');
+	}
 }
