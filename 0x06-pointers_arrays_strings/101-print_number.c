@@ -3,6 +3,9 @@
 /**
   * print_number - print numbers chars
   * @n: integer params
+  *
+  * Written by Desire
+  *
   * Return: 0
  **/
 
