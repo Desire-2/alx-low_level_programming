@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 {
 	int c, c2;
 
-	c = 0;
+	c = 0;/*Declaration of counter variable*/
 	/*find the size of dest array*/
 	while (dest[c])
 		c++;
