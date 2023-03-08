@@ -3,7 +3,7 @@
 /**
  * _print_rev_recursion - a function that prints a string in reverse
  * @s: string to be returned
- * Return:void
+ * Return: strlen_rev_recursion
  */
 
 void _print_rev_recursion(char *s);
@@ -12,5 +12,5 @@ void _print_rev_recursion(char *s);
 		return (0);
 
 	else
-		return (1 + _print_rev_recursion(s + 1));
+		return (1 + _strlen_rev_recursion(s + 1));
 }
