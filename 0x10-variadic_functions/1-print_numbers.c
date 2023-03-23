@@ -10,7 +10,7 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list night;
-	unsigned int a:
+	unsigned int a;
 
 		va_start(night, n);
 	for (a = 0; a < n; a++)/*loop a*/
@@ -18,9 +18,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d", va_arg(night, int));
 
 		if (separator && a < n - 1)
-			printf("%s", separator)
+			printf("%s", separator);
 	}
 	printf("\n");
 	va_end(night);
 }
-
