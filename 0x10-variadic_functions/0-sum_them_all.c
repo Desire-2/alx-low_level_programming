@@ -18,7 +18,7 @@ int sum_them_all(const unsigned int n, ...)
 
 	va_start(night, n);/*argument for intializing list*/
 	for (a = 0; a < n; a++)
-		sum += va_arg(nigth, int);/*this help to get the next argument value.*/
+		sum += va_arg(night, int);/*this help to get the next argument value*/
 	va_end(night);/*is used to do cleanup*/
 	return (sum);
 }
