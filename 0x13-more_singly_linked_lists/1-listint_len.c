@@ -1,12 +1,10 @@
 # include <stddef.h>
 #include "lists.h"
-
 /**
- * list_len - Find  all elements in a linked listint_t list.
- * @h: Listing pointer
- * Return: Numbers
- *
- */
+ * listint_len - a function that returns the number of elements.
+ * @h: pointer to the first node
+ * Return: number of elements
+*/
 
 size_t listint_len(const listint_t *h)
 {
