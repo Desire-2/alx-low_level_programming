@@ -7,7 +7,7 @@
  * Return: 1 on success, -1 fail
  */
 
-int clear_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int r;
 
@@ -16,6 +16,6 @@ int clear_bit(unsigned long int *n, unsigned int index);
 
 	r = 1 << index;
 	if (*n & r)
-		*n ^= m;
+		*n ^= r;
 	return (1);
 }
