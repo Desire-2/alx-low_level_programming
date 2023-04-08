@@ -8,17 +8,14 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int i = 1;
-	 i <<= (sizeof(unsigned long int) * 8 - 1);
-
-	do	{
-		printf("1"); }
-
-		while
-		{
-			(i > 0 || n & i)
-			if (!n)
-				printf("0");
-		i >>= 1;
+	if (n >> 0)
+	{
+		if (n >> 1)
+			print_binary(n >> 1);
+		_putchar((n & 1) + '0');
+	}
+	else
+	{
+		_putchar('0');
 	}
 }
