@@ -12,35 +12,21 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int fd = open(filename, O_WRONLY | O_APPEND);
+	int length = 0, fd = open(filename, O_WRONLY | O_APPEND);
 
 	while (filename == NULL || fd == -1)
 		return (-1);
 
 	if (text_content)
 	{
-		if (write(fd, text_content, strlen(text_content)) == -1)
+		while (text_content[length])
+			length++;
+
+		if (write(fd, text_content, length) != length)
 			return (-1);
 	}
 
-
 	close(fd);
 	return (1);
-}
 
-/**
- * _strlen - Returns the length of a string
- * @s: counter string
- * Return: string
- */
-
-
-int _strlen(char *s)
-{
-	int m = 0;
-
-	while (s[m])
-			m++;
-
-	return (m);
 }
