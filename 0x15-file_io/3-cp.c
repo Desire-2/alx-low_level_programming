@@ -20,6 +20,12 @@ int main(int argc, char *argv[])
 	close_file(fd_from);
 	close_file(fd_to);
 
+	if (chmod(argv[2], FILE_MODE) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't change mode of %s\n", argv[2]);
+		exit(100);
+	}
+
 	return (0);
 }
 /**
