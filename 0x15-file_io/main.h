@@ -21,6 +21,9 @@ int append_text_to_file(const char *filename, char *text_content);
 int main(int argc, char *argv[]);
 
 
+int open_file(const char *path, int flags, mode_t mode);
+void copy_file(int fd_from, int fd_to);
+void close_file(int fd);
 
 
 

@@ -1,53 +1,84 @@
 #include "main.h"
-int main(int argc, char *argv[]);
+#define FILE_MODE (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 /**
- * main - copies the content of a file to another file
- * @argc: number of arguments passed to the program
- * @argv: array of arguments
- *
- * Return: Always 0 (Success)
+ * main - ............
+ * @argc: ..........
+ * @argv: .......
+ * Return: ......
  */
 int main(int argc, char *argv[])
 {
-	int file_from, file_to, x, y, w;
-	char buf[BUFFER_SIZE];
+	int fd_from = open_file(argv[1], O_RDONLY, 0);
+	int fd_to = open_file(argv[2], O_WRONLY | O_CREAT | O_TRUNC, FILE_MODE);
 
-	while (argc != 3)
+	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 		exit(97);
 	}
-	file_from = open(argv[1], O_RDONLY);
-	if (file_from < 0)
+	copy_file(fd_from, fd_to);
+	close_file(fd_from);
+	close_file(fd_to);
+
+	return (0);
+}
+/**
+ * open_file - ......
+ * @path: ........
+ * @flags: ......
+ * @mode: ......
+ * Return: .........
+ */
+int open_file(const char *path, int flags, mode_t mode)
+{
+	int fd = open(path, flags, mode);
+
+	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", path);
 		exit(98);
 	}
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	while ((x = read(file_from, buf, BUFSIZ)) > 0)
+	return (fd);
+}
+/**
+ * copy_file - ............
+ * @fd_from: .....
+ * @fd_to: ...........
+ * Return: ......
+ */
+void copy_file(int fd_from, int fd_to)
+{
+	char buffer[BUFFER_SIZE];
+	ssize_t bytes_read;
+
+
+	while ((bytes_read = read(fd_from, buffer, BUFFER_SIZE)) > 0)
 	{
-		if (file_to < 0 || write(file_to, buf, x) != x)
+		ssize_t bytes_written = write(fd_to, buffer, bytes_read);
+
+		if (bytes_written != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(file_from);
-			exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to file\n");
+			exit(98);
 		}
 	}
-	if (x < 0)
+	if (bytes_read == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file\n");
 		exit(98);
 	}
-	y = close(file_from);
-	w = close(file_to);
-	if (y < 0 || w < 0)
+}
+/**
+ * close_file - ..........
+ * @fd: ..........
+ * Return: ........
+ */
+void close_file(int fd)
+{
+	if (close(fd) == -1)
 	{
-		if (y < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
-		if (w < 0)
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
-	return (0);
 }
 
