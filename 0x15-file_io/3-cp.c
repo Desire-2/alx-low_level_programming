@@ -9,14 +9,10 @@
  *
  * Return: integer number.
  */
-
-
 int main(int argc, char *argv[])
 {
 	int inputFD, outputFD, nBytes_read, nBytes_write;
 	char text[BUFSIZE];
-
-
 
 	if (argc != 3)
 	{
