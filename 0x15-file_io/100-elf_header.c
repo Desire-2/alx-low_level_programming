@@ -55,7 +55,7 @@ void print_c(unsigned char *e_ident)
 
 	switch (e_ident[EI_CLASS])
 	{
-		case ELFCLASSNONE;
+		case ELFCLASSNONE:
 			printf("none\n");
 			break;
 		case ELFCLASS32:
@@ -197,7 +197,7 @@ void print_type_elf(unsigned int e_type, unsigned char *e_ident)
 		case ET_CORE:
 			printf("CORE (Core file)\n");
 			break;
-		default;
+		default:
 		printf("<unknown: %x>\n", e_type);
 	}
 }
