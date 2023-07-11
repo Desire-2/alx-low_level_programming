@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdio.h>
+
+#define BUFSIZE 1024
 /**
  * main - entry point
  * @argc: number of arguments passed to the function.
@@ -11,7 +14,7 @@
 int main(int argc, char *argv[])
 {
 	int inputFD, outputFD, nBytes_read, nBytes_write;
-	char text[BUF_SIZE];
+	char text[BUFSIZE];
 
 
 
@@ -33,7 +36,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((nBytes_read = read(inputFD, text, BUF_SIZE)) > 0)
+	while ((nBytes_read = read(inputFD, text, BUFSIZE)) > 0)
 	{
 		nBytes_write = write(outputFD, text, nBytes_read);
 		if (nBytes_write == -1)
