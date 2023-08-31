@@ -2,7 +2,7 @@
 
 /**
  * binary_to_uint - Function that converts a binary,
- * 					number to an unsigned int.
+ *		number to an unsigned int.
  * @b : to be pointed to the string
  * Return: converted numbe
  */
@@ -11,7 +11,6 @@ unsigned int binary_to_uint(const char *b)
 {
 	int len = 0, cha_base;
 	unsigned int  conv_n = 0;
-	
 
 	if (b == 0)
 	{
