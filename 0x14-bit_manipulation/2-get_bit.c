@@ -22,3 +22,4 @@ int get_bit(unsigned long int n, unsigned int index)
 		bit_cnt++;
 	}
 	return (-1);
+}
