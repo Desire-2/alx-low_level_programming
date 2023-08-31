@@ -1,7 +1,9 @@
 # 0x14. C - Bit Manipulation 
+
 This repository contains solutions for various tasks related to bit manipulation in the C programming language.
 
-# Learning Objectives 
+# Learning Objectives
+
 By completing this project, you are expected to achieve the following learning objectives:
 
 Ability to look for the right sources of information without excessive reliance on external help. Understanding of how to manipulate bits and use bitwise operators. Requirements Allowed editors: vi, vim, emacs All files will be compiled on Ubuntu 20.04 LTS using gcc with the options -Wall -Werror -Wextra -pedantic -std=gnu89 All files should end with a new line. A README.md file is included at the root of the project folder. Code should follow the Betty style. Usage of global variables is not allowed. Each file should contain no more than 5 functions. The only C standard library functions allowed are malloc, free, and exit. Functions like printf, puts, calloc, realloc, etc., are forbidden. Usage of _putchar is allowed. The main.c files provided in the examples are for testing purposes only and will not be considered during evaluation. The evaluation will use custom main.c files. All function prototypes and the prototype for _putchar should be included in the header file main.h. The header files should be include guarded. Project Tasks 0. 0-binary_to_uint.c Write a function that converts a binary number to an unsigned int.
@@ -27,7 +29,8 @@ The parameters n and m are the numbers to compare. The function should return th
 
 # Prototype: int get_endianness(void);
 The function should return 0 if the system is big endian or 1 if it is little endian.
-# 101-password 
+# 101-password
+
 Find the password for a given program.
 
 The password should be saved in a file named 101-password. The file should contain the exact password without any new lines or extra spaces.
