@@ -18,10 +18,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (_nw_tble == NULL)
 		return (NULL);
 	_nw_tble->array = malloc(sizeof(hash_node_t *) * size);
-	if (nw_tble->array == NULL)
+	if (_nw_tble->array == NULL)
 		return (NULL);
 	_nw_tble->size = size;
 	for (_index = 0; _index < size; _index++)
-		_nw_tble->array[index] = NULL;
+		_nw_tble->array[_index] = NULL;
 	return (_nw_tble);
 }
